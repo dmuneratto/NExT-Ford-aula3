@@ -81,10 +81,37 @@ class ListaEncadeada:
     def __repr__(self):
         return '[' + str(self.cabeca) + ']'
 
+    def removeDuplicado(self):
+        corrente = self.cabeca
+        proximo = corrente.proximo
+        while proximo:
+            if corrente.dado == proximo.dado:
+                self.remove(proximo.dado)
+            corrente = corrente.proximo
+            proximo = corrente.proximo
+
+
+            
+
+
+
+
+
 lista_encadeada = ListaEncadeada()
-lista_encadeada.insere_no_inicio(5)
-print(lista_encadeada)
 lista_encadeada.insere_no_inicio(10)
+lista_encadeada.insere_no_inicio(10)
+lista_encadeada.insere_no_inicio(7)
+lista_encadeada.insere_no_inicio(5)
+lista_encadeada.insere_no_inicio(1)
+lista_encadeada.insere_no_inicio(1)
+lista_encadeada.insere_no_inicio(0)
+print(lista_encadeada)
+lista_encadeada.removeDuplicado()
+print(lista_encadeada)
+
+
+
+""" lista_encadeada.insere_no_inicio(10)
 print(lista_encadeada)
 
 lista_encadeada.insere_depois(10, 15)
@@ -93,4 +120,4 @@ print(lista_encadeada)
 # print(lista_encadeada.busca(15))
 
 lista_encadeada.remove(15)
-print(lista_encadeada)
+print(lista_encadeada) """
